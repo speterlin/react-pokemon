@@ -5,7 +5,6 @@ class Pokemon extends Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
 
     this.state = {
       // not sure if want this to be a state item
@@ -17,7 +16,6 @@ class Pokemon extends Component {
   handleClick() {
     this.hasMore = false;
     this.setState({data: []});
-    console.log('hello');
   }
 
   render() {

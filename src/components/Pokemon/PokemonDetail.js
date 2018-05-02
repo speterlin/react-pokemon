@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+// import * as mainActions from '../../actions/mainActions';
 import './PokemonDetail.css';
 
 class PokemonDetail extends Component {
 
   constructor(props) {
     super(props)
-    console.log(props);
 
     this.fetchPokemonInfo();
 
@@ -22,12 +22,11 @@ class PokemonDetail extends Component {
   }
 
   fetchPokemonInfo() {
-    const url = `http://pokeapi.salestock.net/api/v2/pokemon/${this.props.id}`
+    const url = `http://pokeapi.salestock.net/api/v2/pokemon/${this.props.id}/`;
 
     fetch(url)
       .then(response => response.json())
       .then(json => {
-        console.log(json);
         this.setState({
           loading: false,
           name: json.name,
