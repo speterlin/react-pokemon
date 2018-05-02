@@ -1,0 +1,9 @@
+.pokemon-detail {
+  text-align: center;
+  list-style: none;
+}
+
+/* could refactor this into scss */
+.pokemon-detail ul {
+  list-style: none;
+}

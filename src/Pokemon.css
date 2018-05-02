@@ -1,0 +1,12 @@
+.pokemon {
+  background: #d3d3d3;
+  width: 30%;
+  float: left;
+  margin: 20px;
+}
+.pokemon .text {
+  background: #ffffff
+}
+.pokemon .image {
+  text-align: center
+}
