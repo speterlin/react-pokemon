@@ -4,7 +4,7 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
-import PokemonList from "./PokemonList";
+import PokemonList from "./Pokemon/PokemonList";
 import './App.css';
 
 class App extends Component {

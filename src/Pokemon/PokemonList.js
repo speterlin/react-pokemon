@@ -60,8 +60,9 @@ class PokemonList extends Component {
         data: this.searchPokemons(event.target.value)
       });
     } else {
+      // bug not fetching 0-40... pokemon, fetching 0-20 and then whatever was leftover i.e. 60-80
       this.hasMore = true;
-      this.setState({data: []})
+      this.setState({data: []});
       this.fetchPokemon();
     }
   }
