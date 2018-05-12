@@ -13,11 +13,6 @@ class Pokemon extends Component {
 
   }
 
-  handleClick() {
-    this.hasMore = false;
-    this.setState({data: []});
-  }
-
   render() {
     return (
       <div className="pokemon"

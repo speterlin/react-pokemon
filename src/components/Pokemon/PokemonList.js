@@ -23,5 +23,6 @@ class PokemonList extends Component {
   }
 }
 
+// maybe refactor and add propType requirements throughout (like PokemonList.propTypes = { pokemons: React.PropTypes.array.isRequired }), could also add defaultProps, see https://daveceddia.com/watch-out-for-undefined-state/
 
 export default PokemonList;

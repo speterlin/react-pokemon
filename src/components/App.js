@@ -28,12 +28,13 @@ class App extends Component {
     this.state = {
       pokemons: [],
       showPokemonDetail: false,
-      pokemonID: 1
+      pokemonID: null
     }
   }
 
   // would like to refactor and put this in mainActions but need to setState in promise
   fetchPokemons(offset = 0) {
+    // could also get info for each pokemon at this url: http://pokeapi.co/ ... api/v2/ability/34/
     const url = `http://pokeapi.salestock.net/api/v2/pokemon/?offset=${offset}`;
 
     fetch(url)
@@ -77,9 +78,12 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.showPokemonDetail) {
+
+    const { pokemons, showPokemonDetail, pokemonID } = this.state;
+
+    if (showPokemonDetail) {
       return (
-        <PokemonDetail handlePokemonClose={this.handlePokemonClose} id={this.state.pokemonID}  />
+        <PokemonDetail handlePokemonClose={this.handlePokemonClose} id={pokemonID}  />
       )
     } else {
       return (
@@ -92,7 +96,7 @@ class App extends Component {
           useWindow={true}
         >
           <SearchPokemon handleSearch={this.handleSearch} />
-          <PokemonList pokemons={this.state.pokemons} handlePokemonOpen={this.handlePokemonOpen} />
+          <PokemonList pokemons={pokemons} handlePokemonOpen={this.handlePokemonOpen} />
         </InfiniteScroll>
       )
     }
